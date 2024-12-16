@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<style>
+    .main_container{
+        height: 530px;
+        width: 930px;
+        padding-top: 20px;
+        padding-left: 20px;
+        border-radius: 6px;
+        background-color: green;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 80px;
+        height: 500px;
+        width: 900px;
+        border-radius: 6px;
+        background-color: white;
+
+
+    }
+
+    .cart {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .icn,
+    .btn {
+        display: flex;
+        gap: 15px;
+    }
+
+    button {
+        height: 30px;
+        width: 30px;
+    }
+
+    .img1 {
+        height: 90px;
+        width: 140px;
+        background-image: url(./assi_img/p2363380.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .img2 {
+        height: 90px;
+        width: 140px;
+        background-image: url(./assi_img/images.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .img3 {
+        height: 90px;
+        width: 140px;
+        background-image: url(./assi_img/images\ \(1\).jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+
+    .data {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
+
+<body>
+    <div class="main_container">
+        <div class="container">
+            <div class="cart">
+                <div class="icn">
+                    <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+                    <div id="icon1" onclick="toggle()"><i class="fa-solid fa-heart" style="color: #ff0000;" ></i></div>
+                </div>
+
+                <div class="img1"></div>
+
+                <div class="data">
+                    <div class="one">Common projects</div>
+                    <div class="one">Bball High</div>
+                    <div class="two">White</div>
+                </div>
+
+                <div class="btn">
+                    <button onclick="inc1()">+</button>
+                    <div id="qty1"></div>
+                    <button onclick="dec1()">-</button>
+                </div>
+
+                <div id="price1"></div>
+            </div>
+
+            <div class="cart">
+                <div class="icn">
+                    <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="icon2"><i class="fa-solid fa-heart" style="color: #ff0000;"></i></div>
+                </div>
+
+                <div class="img2"></div>
+
+                <div class="data">
+                    <div class="one">Maison Margiela</div>
+                    <div class="one">Future Sneakers</div>
+                    <div class="two">White</div>
+                </div>
+
+                <div class="btn">
+                    <button onclick="inc2()">+</button>
+                    <div id="qty2"></div>
+                    <button onclick="dec2()">-</button>
+                </div>
+
+                <div id="price2"></div>
+            </div>
+
+            <div class="cart">
+                <div class="icn">
+                    <div class="icon"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="icon3"><i class="fa-solid fa-heart" style="color: red;"></i></div>
+                </div>
+
+                <div class="img3"></div>
+
+                <div class="data">
+                    <div class="one">Our Legacy</div>
+                    <div class="one">Brushed Scarf</div>
+                    <div class="two">Boown</div>
+                </div>
+
+                <div class="btn">
+                    <button onclick="inc3()">+</button>
+                    <div id="qty3"></div>
+                    <button onclick="dec3()">-</button>
+                </div>
+
+                <div id="price3"></div>
+            </div>
+
+
+        </div>
+    </div>
+
+</body>
+<script>
+    console.log(1)
+ 
+
+
+    var qty1 = 1
+    var getqty1 = document.getElementById("qty1")
+    getqty1.innerHTML = qty1
+
+    var price1 = 550
+    var getprice1 = document.getElementById("price1")
+    getprice1.innerHTML = price1
+
+    function inc1() {
+        qty1++
+        getqty1.innerHTML = qty1
+
+        var total_price1 = price1 * qty1
+        getprice1.innerHTML = total_price1
+
+    }
+
+    function dec1() {
+        qty1--
+        if (qty1 >= 1) {
+            getqty1.innerHTML = qty1
+
+            var total_price1 = price1 * qty1
+            getprice1.innerHTML = total_price1
+        }
+        else {
+
+            getqty1.innerHTML = "ADD"
+            getprice1.innerHTML = "00"
+        }
+    }
+
+    var qty2 = 1
+    var getqty2 = document.getElementById("qty2")
+    getqty2.innerHTML = qty2
+
+    var price2 = 870
+    var getprice2 = document.getElementById("price2")
+    getprice2.innerHTML = price2
+
+    function inc2() {
+        qty2++
+        getqty2.innerHTML = qty2
+
+        var total_price2 = price2 * qty2
+        getprice2.innerHTML = total_price2
+    }
+
+    function dec2() {
+        qty2--
+        if (qty2 >= 1) {
+            getqty2.innerHTML = qty2
+            var total_price2 = price2 * qty2
+            getprice2.innerHTML = total_price2
+        }
+        else {
+            getqty2.innerHTML = "ADD"
+            getprice2.innerHTML = "00"
+        }
+    }
+
+    var qty3 = 1
+    var getqty3 = document.getElementById("qty3")
+    getqty3.innerHTML = qty3
+
+    var price3 = 360
+    var getprice3 = document.getElementById("price3")
+    getprice3.innerHTML = price3
+
+    function inc3() {
+        qty3++
+        getqty3.innerHTML = qty3
+
+        var total_price3 = price3 * qty3
+        getprice3.innerHTML = total_price3
+
+    }
+
+    function dec3() {
+        qty3--
+        if (qty3 >= 1) {
+            getqty3.innerHTML = qty3
+
+            var total_price3 = price3 * qty3
+            getprice3.innerHTML = total_price3
+
+        }
+
+        else {
+            getqty3.innerHTML = "ADD"
+            getprice3.innerHTML = "00"
+        }
+    }
+</script>
+
+</html>
